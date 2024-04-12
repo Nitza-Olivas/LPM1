@@ -35,6 +35,34 @@
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+    <!-- Agrega las etiquetas de script para la API de YouTube aquí -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+      // Llama a esta función cuando la API de YouTube esté cargada
+      function initYouTubeAPI() {
+        gapi.client
+          .init({
+            apiKey: "AIzaSyBXNKvaCt4d-o2iVoHdQf7JZNTMXknjy_4",
+            discoveryDocs: [
+              "https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest",
+            ],
+          })
+          .then(
+            function () {
+              console.log("API de YouTube cargada correctamente");
+              // Aquí puedes realizar acciones adicionales después de que la API de YouTube esté cargada
+            },
+            function (error) {
+              console.error("Error al cargar la API de YouTube", error);
+            }
+          );
+      }
+
+      // Llama a initYouTubeAPI después de que se haya cargado completamente la página
+      window.onload = function () {
+        gapi.load("client", initYouTubeAPI);
+      };
+    </script>
   </head>
   <body>
     <div class="ie-panel">
@@ -272,7 +300,7 @@
 
       <section class="section section-lg bg-default text-center">
         <div class="container">
-          <h6 class="text-gray-600">latest videos from me and my colleagues</h6>
+          <h6 class="text-gray-600">Videos de nuestros colaboradores</h6>
           <h2>Videos recientes</h2>
           <!--Bootstrap tabs-->
           <div class="tabs-custom tabs-vertical tabs-video" id="tabs-2">
@@ -283,58 +311,14 @@
                   class="entry-video embed-responsive embed-responsive-16by9"
                 >
                   <iframe
-                    width="886"
-                    height="668"
-                    src="//www.youtube.com/embed/4gRjnaitguQ"
-                    allowfullscreen=""
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-2">
-                <div
-                  class="entry-video embed-responsive embed-responsive-16by9"
-                >
-                  <iframe
-                    width="886"
-                    height="668"
-                    src="//www.youtube.com/embed/mfMR-URQl80"
-                    allowfullscreen=""
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-3">
-                <div
-                  class="entry-video embed-responsive embed-responsive-16by9"
-                >
-                  <iframe
-                    width="886"
-                    height="668"
-                    src="//www.youtube.com/embed/xweHsBLcqp4"
-                    allowfullscreen=""
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-4">
-                <div
-                  class="entry-video embed-responsive embed-responsive-16by9"
-                >
-                  <iframe
-                    width="886"
-                    height="668"
-                    src="//www.youtube.com/embed/V3pPMUmIxAc"
-                    allowfullscreen=""
-                  ></iframe>
-                </div>
-              </div>
-              <div class="tab-pane fade" id="tabs-2-5">
-                <div
-                  class="entry-video embed-responsive embed-responsive-16by9"
-                >
-                  <iframe
-                    width="886"
-                    height="668"
-                    src="//www.youtube.com/embed/N1DEOCUujUg"
-                    allowfullscreen=""
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/rjEtOllFb0A?si=oG7wz6G-Y4LTavyT"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
                   ></iframe>
                 </div>
               </div>
@@ -345,16 +329,18 @@
                 <li class="nav-item" role="presentation">
                   <a class="nav-link active" href="#tabs-2-1" data-toggle="tab">
                     <div class="nav-video">
-                      <figure class="nav-video-figure">
-                        <img
-                          src="images/video-01-140x81.jpg"
-                          alt=""
-                          width="140"
-                          height="40"
-                        />
-                      </figure>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/TJsDfKIyQ1I?si=d491vNLEJl1qAXwc"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
                       <h6 class="nav-video-title">
-                        Armin van Buuren Live at Tomorrowland 2015
+                        Huichol Musical - Que falta me hace mi padre
                       </h6>
                     </div></a
                   >
@@ -362,33 +348,35 @@
                 <li class="nav-item" role="presentation">
                   <a class="nav-link" href="#tabs-2-2" data-toggle="tab">
                     <div class="nav-video">
-                      <figure class="nav-video-figure">
-                        <img
-                          src="images/video-02-140x81.jpg"
-                          alt=""
-                          width="140"
-                          height="40"
-                        />
-                      </figure>
-                      <h6 class="nav-video-title">
-                        Juicy M - Live at MEO Sudoeste Festival
-                      </h6>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/gJ9_5S4T628?si=YCKshvlWhJl_gCsn"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                      <h6 class="nav-video-title">Jonathan Becerra - Volcán</h6>
                     </div></a
                   >
                 </li>
                 <li class="nav-item" role="presentation">
                   <a class="nav-link" href="#tabs-2-3" data-toggle="tab">
                     <div class="nav-video">
-                      <figure class="nav-video-figure">
-                        <img
-                          src="images/video-03-140x81.jpg"
-                          alt=""
-                          width="140"
-                          height="40"
-                        />
-                      </figure>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/JThD2cMnNnw?si=Mk9PX3d3oAcBosda"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
                       <h6 class="nav-video-title">
-                        Armin van Buuren feat. Angel Taylor - Make It Right
+                        Los Sembradores - Mente Positiva
                       </h6>
                     </div></a
                   >
@@ -396,16 +384,18 @@
                 <li class="nav-item" role="presentation">
                   <a class="nav-link" href="#tabs-2-4" data-toggle="tab">
                     <div class="nav-video">
-                      <figure class="nav-video-figure">
-                        <img
-                          src="images/video-04-140x81.jpg"
-                          alt=""
-                          width="140"
-                          height="40"
-                        />
-                      </figure>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/i99n-S_3uVA?si=wqKPYMl4xu1rhP68"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
                       <h6 class="nav-video-title">
-                        Armin Only crew taking over Sydney! Armin Only VLOG
+                        Los Primos MX - Mi mejor regalo
                       </h6>
                     </div></a
                   >
@@ -413,16 +403,18 @@
                 <li class="nav-item" role="presentation">
                   <a class="nav-link" href="#tabs-2-5" data-toggle="tab">
                     <div class="nav-video">
-                      <figure class="nav-video-figure">
-                        <img
-                          src="images/video-05-140x81.jpg"
-                          alt=""
-                          width="140"
-                          height="40"
-                        />
-                      </figure>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/8Y9CgwTDZ98?si=3vFAUL1yf5g3z57W"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
                       <h6 class="nav-video-title">
-                        Armin Only crew taking over San Francisco!
+                        Los del nido ft. angel castillo - si no estas
                       </h6>
                     </div></a
                   >
@@ -805,5 +797,11 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <!--coded by houdini-->
+    <script>
+      // Llama a initYouTubeAPI después de que se haya cargado completamente la página
+      window.onload = function () {
+        gapi.load("client", initYouTubeAPI);
+      };
+    </script>
   </body>
 </html>
