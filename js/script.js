@@ -2283,7 +2283,7 @@
             layout: $countDownItem.attr("data-layout"),
           };
 
-        // Crear la fecha final para el 18 de mayo a las 00:00 horas
+        // Crear la fecha final
         var fechaFinal = new Date();
         fechaFinal.setFullYear(2024); // Año
         fechaFinal.setMonth(4); // Mes (0 = enero, 4 = mayo)
