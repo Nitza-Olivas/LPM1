@@ -7,12 +7,12 @@
     $ccv = $_POST['ccv'];
 
     //database
-    $conn = new mysqli('localhost','root','compras');
+    $conn = new mysqli('localhost:84','root','12345678','compras');
     if($conn->connect_error){
         die('connection Failed : '.$conn->connect_error);
     } else{
         $stmt = $conn->prepare("insert into clientes(nombre, telefono, email, ntarjeta, vtarjeta, ccv) 
-        vaules(?, ?, ?, ?, ?, ?)");
+        VALUES (?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("sssiss",$nombre,$telefono,$email,$ntarjeta,$vtarjeta,$ccv);
         $stmt->execute();
         echo "Compra exitosa";
