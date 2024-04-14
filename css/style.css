@@ -11078,7 +11078,7 @@ a.link-social:hover::after {
 }
 
 @media (min-width: 1200px) {
-  .box-about-mega-title {
+.box-about-mega-title {
     font-size: 133px;
     line-height: 84px;
   }
