@@ -2283,16 +2283,19 @@
             layout: $countDownItem.attr("data-layout"),
           };
 
-        if (livedemo) {
-          var d = new Date();
-          d.setDate(d.getDate() + 42);
-          settings[$countDownItem.attr("data-type")] = d;
-        } else {
-          settings[$countDownItem.attr("data-type")] = new Date(
-            $countDownItem.attr("data-time")
-          );
-        }
+        // Crear la fecha final para el 18 de mayo a las 00:00 horas
+        var fechaFinal = new Date();
+        fechaFinal.setFullYear(2024); // Año
+        fechaFinal.setMonth(4); // Mes (0 = enero, 4 = mayo)
+        fechaFinal.setDate(18); // Día
+        fechaFinal.setHours(0); // Horas
+        fechaFinal.setMinutes(0); // Minutos
+        fechaFinal.setSeconds(0); // Segundos
 
+        // Asignar la fecha final al contador regresivo
+        settings[$countDownItem.attr("data-type")] = fechaFinal;
+
+        // Inicializar el contador regresivo con las configuraciones
         $countDownItem.countdown(settings);
       }
     }
